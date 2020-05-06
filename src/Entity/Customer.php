@@ -60,14 +60,14 @@ class Customer
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"customers_read", "invoices_read"})
+     * @Assert\NotBlank(message="l'email du customer est obligatoire")
+     * @Assert\Email(message="le format de lemail doit etre valide")
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"customers_read", "invoices_read"})
-     * @Assert\NotBlank(message="l'email du customer est obligatoire")
-     * @Assert\Email(message="le format de lemail doit etre valide")
      */
     private $company;
 
