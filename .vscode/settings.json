@@ -1,14 +1,17 @@
 {
-    "emmet.includeLanguages": {
-        
-
-
-        "twig": "html",
-        "javascript":"javascriptreact"
-    },
-    "emmet.triggerExpansionOnTab": true,
-    "emmet.excludeLanguages": [
-
-        "markdown"
-    ]
+  "emmet.includeLanguages": {
+    "twig": "html",
+    "javascript": "javascriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "css.validate": false,
+  "eslint.enable": true,
+  "stylelint.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.markdownlint": true,
+    "source.fixAll.stylelint": true
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

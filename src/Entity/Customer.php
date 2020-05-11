@@ -93,7 +93,7 @@ class Customer
     /**
      * @Groups({"customers_read"})
      */
-    public function getTotalAmout(): float 
+    public function getTotalAmount(): float 
     {
         return array_reduce($this->invoices->toArray(), function ($total, $invoice) {
             return $total + $invoice->getAmount();

@@ -3,7 +3,14 @@
         "@babel/preset-react": "^7.9.4",
         "@symfony/webpack-encore": "^0.29.0",
         "core-js": "^3.0.0",
+        "i": "^0.3.6",
+        "npm": "^6.14.5",
+        "prettier": "^2.0.5",
+        "prettier-config-standard": "^1.0.1",
         "regenerator-runtime": "^0.13.2",
+        "stylelint": "^13.0.0",
+        "stylelint-config-prettier": "^8.0.1",
+        "stylelint-config-standard": "^19.0.0",
         "webpack-notifier": "^1.6.0"
     },
     "license": "UNLICENSED",
@@ -12,10 +19,19 @@
         "dev-server": "encore dev-server --port 8080",
         "dev": "encore dev",
         "watch": "encore dev --watch",
-        "build": "encore production --progress"
+        "build": "encore production --progress",
+        "lint:json": "prettier --check \"./**/*.json\"",
+        "format:json": "prettier --write \"./**/*.json\"",
+        "lint:yml": "prettier --check \"./**/*.yml\"",
+        "format:yml": "prettier --write \"./**/*.yml\"",
+        "lint:js": "eslint \"./**/*.js\"",
+        "format:js": "eslint --fix \"./**/*.js\"",
+        "lint:css": "prettier --check \"./**/*.css\" && stylelint \"./**/*.css\"",
+        "format:css": "prettier --write \"./**/*.css\" && stylelint --fix \"./**/*.css\""
     },
     "dependencies": {
         "axios": "^0.18.1",
+        "moment": "^2.25.3",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-router-dom": "^5.0.0"

@@ -1,0 +1,25 @@
+{
+    "extends": [
+      "react-app",
+      "plugin:jsx-a11y/recommended",
+      "standard",
+      "prettier-standard"
+    ],
+    "overrides": [
+      {
+        "files": ["./src/**/*.test.js"],
+        "extends": [
+          "plugin:jest/all",
+          "plugin:jest-dom/recommended",
+          "standard",
+          "prettier-standard"
+        ]
+      },
+      {
+        "files": ["./cypress/**/*.spec.js"],
+        "extends": ["plugin:cypress/recommended", "standard", "prettier-standard"]
+      }
+    ],
+    "plugins": ["jsx-a11y", "jest", "jest-dom", "cypress"],
+    "ignorePatterns": ["node_modules"]
+  }
