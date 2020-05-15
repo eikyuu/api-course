@@ -1,39 +1,41 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useContext } from "react";
+import AuthApi from "../services/authApi";
+import AuthContext from "../contexts/AuthContext";
 
-const LoginPage = (props) => {
-  const [credentials, setCrendentials] = useState({
+const LoginPage = ({ history }) => {
+  const { setIsAuthenticated } = useContext(AuthContext);
+
+  const [credentials, setCredentials] = useState({
     username: "",
     password: "",
   });
-
   const [error, setError] = useState("");
 
-  const handleChange = (event) => {
-    const value = event.currentTarget.value;
-    const name = event.currentTarget.name;
-
-    setCrendentials({ ...credentials, [name]: value });
+  // Gestion des champs
+  const handleChange = ({ currentTarget }) => {
+    const { value, name } = currentTarget;
+    setCredentials({ ...credentials, [name]: value });
   };
 
+  // Gestion du submit
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      await axios
-        .post("http://127.0.0.1:8000/api/login_check", credentials)
-        .then((response) => console.log(response));
+      await AuthApi.authenticate(credentials);
+      setError("");
+      setIsAuthenticated(true);
+      history.replace("/customers");
     } catch (error) {
       setError(
-        "Aucun compte ne possede cette adresse ou alors les informations ne correspondent pas"
+        "Aucun compte ne possède cette adresse email ou alors les informations ne correspondent pas !"
       );
     }
-    console.log(credentials);
   };
 
   return (
     <>
-      <h1>Connexion a l'application</h1>
+      <h1>Connexion à l'application</h1>
 
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -42,7 +44,7 @@ const LoginPage = (props) => {
             value={credentials.username}
             onChange={handleChange}
             type="email"
-            placeholder="adresse email"
+            placeholder="Adresse email de connexion"
             name="username"
             id="username"
             className={"form-control" + (error && " is-invalid")}
@@ -70,5 +72,4 @@ const LoginPage = (props) => {
     </>
   );
 };
-
 export default LoginPage;

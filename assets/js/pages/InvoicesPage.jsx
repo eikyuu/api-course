@@ -115,7 +115,8 @@ const InvoicesPage = (props) => {
               <td className="text-center">{formatDate(invoice.sentAt)}</td>
               <td className="text-center">
                 <span
-                  className={"badge badge-" + STATUS_CLASSES[invoice.status]}>
+                  className={"badge badge-" + STATUS_CLASSES[invoice.status]}
+                >
                   {STATUS_LABELS[invoice.status]}
                 </span>
               </td>
@@ -126,7 +127,8 @@ const InvoicesPage = (props) => {
                 <button className="btn btn-sm btn-primary mr-1">Editer</button>
                 <button
                   className="btn btn-sm btn-danger"
-                  onClick={() => handleDelete(invoice.id)}>
+                  onClick={() => handleDelete(invoice.id)}
+                >
                   Supprimer
                 </button>
               </td>
