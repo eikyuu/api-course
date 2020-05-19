@@ -1,7 +1,7 @@
 {
     "devDependencies": {
         "@babel/preset-react": "^7.9.4",
-        "@symfony/webpack-encore": "^0.29.0",
+        "@symfony/webpack-encore": "^0.30.2",
         "core-js": "^3.0.0",
         "i": "^0.3.6",
         "npm": "^6.14.5",
@@ -34,7 +34,9 @@
         "jwt-decode": "^2.2.0",
         "moment": "^2.25.3",
         "react": "^16.13.1",
+        "react-content-loader": "^5.0.4",
         "react-dom": "^16.13.1",
-        "react-router-dom": "^5.0.0"
+        "react-router-dom": "^5.0.0",
+        "react-toastify": "^6.0.4"
     }
 }
