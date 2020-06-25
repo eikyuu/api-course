@@ -5,9 +5,11 @@ const HomePage = (props) => {
     <div className="jumbotron">
       <h1 className="display-3">Bienvenue sur Shym</h1>
       <p className="lead">
-        Cette application est realiser avec Symfony ApiPlatform et React, elle a
-        pour but de gerer vos clients et vos factures.
+        Shym vous permet de gérer vos clients et leurs factures très simplement
+        sur une interface minimaliste sécuriser et performante.
       </p>
+      <p>Pour débuter, commencez par vous inscrire ! </p>
+      <button className="btn btn-primary">Je m'inscris</button>
     </div>
   );
 };
