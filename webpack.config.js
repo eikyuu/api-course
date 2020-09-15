@@ -2,10 +2,6 @@ require("dotenv").config();
 
 var Encore = require("@symfony/webpack-encore");
 
-var cors = require("cors");
-
-app.use(cors()); // Use this after the variable declaration
-
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
 if (!Encore.isRuntimeEnvironmentConfigured()) {
