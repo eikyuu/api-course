@@ -30,7 +30,7 @@
         "format:css": "prettier --write \"./**/*.css\" && stylelint --fix \"./**/*.css\""
     },
     "dependencies": {
-        "axios": "^0.18.1",
+        "axios": "^0.21.1",
         "cors": "^2.8.5",
         "dotenv": "^8.2.0",
         "jwt-decode": "^2.2.0",
